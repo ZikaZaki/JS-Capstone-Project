@@ -4,18 +4,12 @@
 /* Importing Fonts */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-/* Importing the "normalize.css" file which is for resetting all the default css values */
-@import url("./normalize.css");
-
-/* Importing Fonts */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
 /* ******Main & Secondary Colors****** */
 :root {
   --white: #fff;
   --isabelline: #f7f4ef;
   --silver-sand: #c7c6c3;
-  --chrome-yellow: #feaa00; 
+  --chrome-yellow: #feaa00;
   --dark-olive: #788402;
   --light-olive: #bcc281;
   --dark-temptrees: #342628;
@@ -29,11 +23,11 @@
 /* **********Global Classes********** */
 body,
 main {
-    width: 100%;
-    height: 100%;
-    background: var(--isabelline);
-    padding: 0;
-    margin: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--isabelline);
+  padding: 0;
+  margin: 0;
 }
 
 .container {
@@ -81,99 +75,103 @@ h3 {
 
 /* ======================================Navigation Start==================================== */
 .desktop-menu nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 45px;
-    background: transparent;
-    border-radius: 8px;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    /* position: relative; */
-  }
-  
-  .nav-menu {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 35px;
-      flex-wrap: nowrap;
-    }
-  
-  .nav-menu a {
-    font-size: 15px;
-    line-height: 50px;
-    letter-spacing: 0.2em;
-    text-decoration: none;
-    text-align: center;
-    color: var(--isabelline);
-    opacity: 0.75;
-    width: 100%;
-    /* position: relative; */
-    z-index: 1;
-  }
-  
-  .nav-menu a:hover {
-      opacity: 1;
-      scale: 1.05;
-      transition: all 0.3s ease-in-out;
-  } 
-  
-  .search-box {
-      display: flex;
-      justify-content:space-between;
-      align-items: center;
-      flex-wrap: nowrap;
-      border-radius: 60px;
-      background: var(--light-temptrees);
-      /* background: rgba(255, 255, 255, 0.2); */
-      backdrop-filter: blur(4px) saturate(180%);
-      transition: all 0.5s ease-in-out;
-      width: 100%;
-      min-width: 0;
-      padding: 5px;
-  }
-  
-  .search-box input {
-      flex: 1;
-      border: 0;
-      outline: none;
-      font-size: 15px;
-      background: transparent;
-      color: var(--isabelline);
-      width: 0;
-      padding: 0;
-  }
-  
-  ::placeholder {
-    color: var(--isabelline);
-  }
-  
-  .search-box button {
-      text-align: center;
-      border: 0;
-      border-radius: 50%;
-      background: transparent;
-      color:var(--isabelline);
-      opacity: 0.75;
-      cursor: pointer;
-      width: 35px;
-      height: 35px;
-      padding: 0;
-      margin: 0;
-  }
-  
-  .search-box button:hover {
-      transition: all 0.3s ease-in-out;
-      background: rgba(255, 255, 255, 0.2);
-      opacity: 1;
-      scale: 1.05;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 45px;
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+
+  /* position: relative; */
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 35px;
+  flex-wrap: nowrap;
+}
+
+.nav-menu a {
+  font-size: 15px;
+  line-height: 50px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-align: center;
+  color: var(--isabelline);
+  opacity: 0.75;
+  width: 100%;
+
+  /* position: relative; */
+  z-index: 1;
+}
+
+.nav-menu a:hover {
+  opacity: 1;
+  scale: 1.05;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-radius: 60px;
+  background: var(--light-temptrees);
+
+  /* background: rgba(255, 255, 255, 0.2); */
+  backdrop-filter: blur(4px) saturate(180%);
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  min-width: 0;
+  padding: 5px;
+}
+
+.search-box input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  font-size: 15px;
+  background: transparent;
+  color: var(--isabelline);
+  width: 0;
+  padding: 0;
+}
+
+::placeholder {
+  color: var(--isabelline);
+}
+
+.search-box button {
+  text-align: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--isabelline);
+  opacity: 0.75;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  margin: 0;
+}
+
+.search-box button:hover {
+  transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  scale: 1.05;
+}
+
 /* =======================================Navigation End===================================== */
 
 /* =====================================Page-Wrapper Start=================================== */
@@ -185,10 +183,11 @@ h3 {
 }
 
 .page-content {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
+
 /* ======================================Page-Wrapper End==================================== */
 
 /* ================================Meals-Items-Section Start================================ */
@@ -213,12 +212,12 @@ footer {
   background: var(--dark-temptrees);
   width: 100%;
   height: 100%;
-  padding: 25px 65px ;
+  padding: 25px 65px;
   margin: 0;
   position: relative;
 }
 
-.social-icons {
+.footer-content .social-icons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -228,11 +227,11 @@ footer {
   padding: 10px;
 }
 
-.social-icons li {
+.footer-content .social-icons li {
   list-style: none;
 }
 
-.social-icons li a {
+.footer-content .social-icons li a {
   display: inline-block;
   font-size: 25px;
   color: var(--isabelline);
@@ -240,12 +239,8 @@ footer {
   opacity: 0.75;
 }
 
-.social-icons li a:hover {
+.footer-content .social-icons li a:hover {
   transform: translateY(-10px);
-  opacity: 1;
-}
-
-.menu li a:hover {
   opacity: 1;
 }
 
@@ -256,23 +251,17 @@ footer {
 /*******  First Breakpoint  *******/
 @media screen
   and (min-width: 900px) {
-    .search-box {
-      transition: all 0.5s ease-in-out;
-      width: 100%;
-      min-width: 300px;
-      padding: 5px 10px;
-    }
-    
-    .search-box input {
-      transition: all 0.2s ease-in-out;
-        padding: 8px 5px;
-    }
-}
+  .search-box {
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    min-width: 300px;
+    padding: 5px 10px;
+  }
 
-/*******  Second Breakpoint  *******/
-@media screen
-  and (min-width: 768px) {
-
+  .search-box input {
+    transition: all 0.2s ease-in-out;
+    padding: 8px 5px;
+  }
 }
 
 /* =====================================Media Query End===================================== */
