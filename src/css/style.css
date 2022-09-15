@@ -72,10 +72,32 @@ h3 {
 }
 
 .header-logo img {
-  width: 180px;
-  height: 71px;
+  width: 125px;
+  height: 60px;
+  padding: 0 15px;
 }
 
+.meals-count {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 0 25px;
+}
+
+.meals-count h2{
+  font-size: 15px;
+  font-family: var(--open-sans);
+  color: var(--silver-sand);
+  background: var(--dark-temptrees);
+  text-align: center;
+  text-decoration: underline;
+  border-radius: 25px;
+  border: 3px solid var(--light-temptrees);
+  padding: 15px;
+  margin: 5px 0 25px;
+}
 /* =======================================Header End======================================= */
 
 /* ======================================Navigation Start==================================== */
@@ -187,7 +209,7 @@ h3 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 120px 40px 20px;
+  padding: 100px 40px 20px;
   min-height: 555px;
   height: 100%;
   width: 100%;
@@ -205,6 +227,8 @@ h3 {
 }
 
 /* ======================================Page-Wrapper End==================================== */
+
+/* ================================Meals-Items-Section Start================================ */
 .card-wrapper {
   display: flex;
   width: auto;
@@ -318,12 +342,6 @@ h3 {
   color: #333;
 }
 
-.description {
-  font-size: 14px;
-  color: #707070;
-  text-align: center;
-}
-
 .card-buttons {
   display: flex;
   flex-direction: row;
@@ -350,9 +368,6 @@ h3 {
 .card-btn:hover {
   background-color: var(--dark-olive);
 }
-
-/* ================================Meals-Items-Section Start================================ */
-
 
 /* =================================Meals-Items-Section End================================= */
 

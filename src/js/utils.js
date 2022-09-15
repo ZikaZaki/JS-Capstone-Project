@@ -1,13 +1,27 @@
 import mealsURL from './api-utils.js';
+import logo from '../img/logo.png';
+
+const setHeaderLogo = () => {
+  document.querySelector('#header_logo').src = logo;
+};
+
+const setMealsCount = async (meals) => {
+  const countElement = document.querySelector('#meals_count');
+  const counter = await meals.length;
+  countElement.innerHTML = `Number of Meals: (${counter})`;
+  return counter;
+};
 
 const displayMeals = async () => {
   try {
     // Fetching the meals from the API
     const fetchedMeals = await fetch(mealsURL);
     const { meals } = await fetchedMeals.json();
+    // Setting the meals count
+    setMealsCount(meals);
     // Get the Page-Content element to insert meal cards
     const pageContent = document.querySelector('#page_content');
-
+    // Looping through the meals
     meals.map((meal) => {
       const {
         idMeal, strMeal, strMealThumb,
@@ -69,4 +83,4 @@ const displayMeals = async () => {
   }
 };
 
-export default displayMeals;
+export { displayMeals, setHeaderLogo };
