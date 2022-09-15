@@ -1,18 +1,20 @@
-import { mealsURL } from './api-utils.js';
+import mealsURL from './api-utils.js';
 
-export const displayMeals = async () => {
-    try {
-        // Fetching the meals from the API
-        const fetchedMeals = await fetch(mealsURL);
-        const { meals } = await fetchedMeals.json();
-        // Get the Page-Content element to insert meal cards
-        const pageContent = document.querySelector('#page_content');
+const displayMeals = async () => {
+  try {
+    // Fetching the meals from the API
+    const fetchedMeals = await fetch(mealsURL);
+    const { meals } = await fetchedMeals.json();
+    // Get the Page-Content element to insert meal cards
+    const pageContent = document.querySelector('#page_content');
 
-        meals.map((meal) => {
-            const { idMeal, strMeal, strInstructions, strMealThumb } = meal;
-            const mealCard = document.createElement('div');
-            mealCard.classList.add('card-wrapper');
-            mealCard.innerHTML = `
+    meals.map((meal) => {
+      const {
+        idMeal, strMeal, strMealThumb,
+      } = meal;
+      const mealCard = document.createElement('div');
+      mealCard.classList.add('card-wrapper');
+      mealCard.innerHTML = `
             <div class="card" meal_id="${idMeal}">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -37,33 +39,34 @@ export const displayMeals = async () => {
                 </div>
             </div>
             `;
-            
-            // Setting the comment button event listener
-            mealCard.querySelector('#comment_btn').addEventListener('click', () => {
-                /* here you should invoke the showComments(idMeal) function 
+
+      // Setting the comment button event listener
+      mealCard.querySelector('#comment_btn').addEventListener('click', () => {
+        /* here you should invoke the showComments(idMeal) function
                 and pass the idMeal as an argument
                 */
-            });
+      });
 
-            // Setting the reservation button event listener
-            mealCard.querySelector('#reservation_btn').addEventListener('click', () => {
-                 /* here you should invoke the showReservations(idMeal) function 
+      // Setting the reservation button event listener
+      mealCard.querySelector('#reservation_btn').addEventListener('click', () => {
+        /* here you should invoke the showReservations(idMeal) function
                 and pass the idMeal as an argument
                 */
-            });
+      });
 
-            // Setting the like button event listener
-            // const likeCount = mealCard.querySelector('#like_count');
-            mealCard.querySelector('#heart_icon').addEventListener('click', () => {
-                /* here you should invoke the addLike(idMeal, likeCount) function
+      // Setting the like button event listener
+      // const likeCount = mealCard.querySelector('#like_count');
+      mealCard.querySelector('#heart_icon').addEventListener('click', () => {
+        /* here you should invoke the addLike(idMeal, likeCount) function
                 and pass the { idMeal, likeCount } as arguments
                 */
-              });
+      });
 
-            pageContent.appendChild(mealCard);
-        });
-    }catch(errorMsg){
-        console.log(errorMsg);
-    }
+      return pageContent.appendChild(mealCard);
+    });
+  } catch (errorMsg) {
+    throw new Error(errorMsg);
+  }
 };
 
+export default displayMeals;
