@@ -10,8 +10,12 @@
   --isabelline: #f7f4ef;
   --silver-sand: #c7c6c3;
   --chrome-yellow: #feaa00;
+  --light-chrome-yellow: #fecc66;
+  --light-x-chrome-yellow: #ffe6b3;
   --dark-olive: #788402;
-  --light-olive: #bcc281;
+  --light-olive: #a1a94e;
+  --light-x-olive: #aeb567;
+  --light-xx-olive: #bcc281;
   --dark-temptrees: #342628;
   --light-temptrees: #5d5153;
   --verdana: verdana, tahoma, sans-serif;
@@ -64,6 +68,7 @@ h3 {
   height: 80px;
   padding: 5px 45px;
   margin: 0;
+  z-index: 9999;
 }
 
 .header-logo img {
@@ -111,7 +116,7 @@ h3 {
   width: 100%;
 
   /* position: relative; */
-  z-index: 1;
+  z-index: 99999;
 }
 
 .nav-menu a:hover {
@@ -176,19 +181,175 @@ h3 {
 
 /* =====================================Page-Wrapper Start=================================== */
 .page-wrapper {
-  display: block;
-  padding: 80px 0 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 120px 40px 20px;
   min-height: 555px;
   height: 100%;
+  width: 100%;
 }
 
 .page-content {
-  display: block;
-  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
   height: auto;
+  width: 100%;
 }
 
 /* ======================================Page-Wrapper End==================================== */
+.card-wrapper {
+  display: flex;
+  width: auto;
+}
+
+.card {
+  width: 320px;
+  border: 3px solid var(--dark-olive);
+  border-radius: 27px;
+  background-color: var(--isabelline);
+}
+
+.image-content,
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+
+.image-content {
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--light-xx-olive);
+  border-radius: 25px 25px 0 25px;
+  padding: 10px;
+}
+
+.overlay::before,
+.overlay::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: var(--light-xx-olive);
+}
+
+.overlay::after {
+  border-radius: 0 25px 0 0;
+  background-color: var(--isabelline);
+}
+
+.card-image {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background: var(--isabelline);
+}
+
+.card-image .card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-wrapper img {
+  width: 300px;
+  height: 300px;
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 15px;
+  z-index: 1;
+}
+
+/* ==============LIKE BUTTON======================= */
+
+.like-content {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.heart-icon {
+  color: red;
+}
+
+.like-count::before {
+  font-family: sans-serif;
+  font-size: 15px;
+  content: '12 Likes';
+  color: #9c9496;
+}
+
+/* ==============LIKE BUTTON======================= */
+.meal-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.description {
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+}
+
+.card-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.card-btn {
+  font-family: var(--open-sans);
+  font-size: 15px;
+  color: var(--isabelline);
+  padding: 8px;
+  background-color: var(--light-x-olive);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 35px;
+  width: 110px;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-btn:hover {
+  background-color: var(--dark-olive);
+}
 
 /* ================================Meals-Items-Section Start================================ */
 
@@ -245,6 +406,8 @@ footer {
 }
 
 /* ===================================Footer-Section End=================================== */
+
+
 
 /* ====================================Media Query Start==================================== */
 
