@@ -86,7 +86,7 @@ h3 {
   padding: 0 25px;
 }
 
-.meals-count h2{
+.meals-count h2 {
   font-size: 15px;
   font-family: var(--open-sans);
   color: var(--silver-sand);
@@ -98,6 +98,7 @@ h3 {
   padding: 15px;
   margin: 5px 0 25px;
 }
+
 /* =======================================Header End======================================= */
 
 /* ======================================Navigation Start==================================== */
