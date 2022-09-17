@@ -1,55 +1,87 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
-# Project Name
+# JS-Capstone-Project (Meals Lover)
 
 > This project is build around the **MealDB API** using HTML5,SCSS and JavaScript. You can view various types of **Dishes** & **Meals** and you can also get all the **info** about them. Moreover, you can interact with the meals list by giving them a **like** or by adding some comments about them.
 
-## Built With
+## Built With ⚙️
 
-- Major languages
-- Frameworks
-- Technologies used
+- **Major languages**: HTML, CSS, & JavaScript.
+- **Frameworks**: No-Frameworks.
+- **Linters**: Lighthouse, Webhint, Stylelint and ESLint.
+- **Technologies used**: NPM, Webpack, & Jest Library.
+- **Tools**: Git, Gitflow, GitHub, VS Code, & Chrome Browser.
 
-## Live Demo (if available)
+## Live Demo (Deployed on GitHub-Pages with SSL)
 
-[Live Demo Link](https://livedemo.com)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blueviolet)](https://livedemo.com)
 
+[Live Demo Link](https://zikazaki.github.io/JS-Capstone-Project/dist/)
+
+## Video Demo (Using Loom)
+
+[![Loom](https://img.shields.io/badge/Loom-Video-blueviolet)](https://loom.com)
+
+[Meals Lover Video Demo](https://www.loom.com/share/ea28c66ce61442e5b11c08218fe91261)
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- [x] Basic Knowledge of **HTML**, **CSS**, & **JavaScript**.
+- [x] Basic knowledge of **ES6** syntax.
+- [x] Basic knowledge of **Git** & **GitHub**.
+- [x] Basic knowledge of **Linters**.
+- [x] Basic knowledge of **Webpack**.
+- [x] Basic knowledge of **Jest** unit-testing library.
+- [x] Basic knowledge of **VS Code** or any other code-editors.
+
 ### Setup
 
-### Install
+- Create a new **Microverse** folder and move into it.
+- Open the **Command Prompt (CMD)** in the current directory (Microverse Folder).
+- Run the following command:
 
-### Usage
+```
+$ git clone https://github.com/ZikaZaki/JS-Capstone-Project.git
+```
 
+- Once finished you should see a new folder called **JS-Capstone-Project** in your current directory.
+- Start customizing the project so it fits your personal preferences and needs.
+- Enjoy your new professional **JS-Capstone-Project** application!
+
+### Install Dependencies
+
+To check for linters, use the files provided by [Microverse](https://github.com/microverseinc/linters-config). A GitHub action is also set to run during pull request.
+
+```
+$ npm install
+```
 ### Run tests
 
-### Deployment
+We used the **Jest** library for testing the project.
 
-
+```
+$ npm test
+```
 
 ## Authors
 
-👤 **Author1**
+👤 **Zakariya Al-Khamisi ([ZikaZaki](https://github.com/ZikaZaki))**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [ZikaZaki](https://github.com/ZikaZaki)
+- Twitter: [Zakariya Al-Khamisi](https://twitter.com/ZakariyaKhamisi)
+- LinkedIn: [Zakariya Al-Khamisi](https://www.linkedin.com/in/zakariyaalkhamisisap/)
 
-👤 **Author2**
+👤 **Bantealem Geto ([Bantealem Geto](https://github.com/Bantealem))**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [Bantealem](https://github.com/Bantealem)
+- Twitter: [Bantealem](https://twitter.com/BantealemG)
+- LinkedIn: [Bantealem](https://www.linkedin.com/in/bantealem-geto-a301b9213/)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
 
 ## 🤝 Contributing
 
@@ -57,12 +89,10 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Show your support
-
-Give a ⭐️ if you like this project!
-
 ## Acknowledgments
 
+- [Microverse](https://www.microverse.org/)
+- Code Reviewers & Coding Partners
 - Hat tip to anyone whose code was used
 - Inspiration
 - etc
