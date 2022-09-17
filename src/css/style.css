@@ -5,6 +5,34 @@
 /* Importing Fonts */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+/* Scrollbar Styling */
+::-webkit-scrollbar-button {
+  height: 50px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: var(--light-temptrees);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
 /* ******Main & Secondary Colors****** */
 :root {
   --white: #fff;
@@ -24,31 +52,13 @@
   --sans-serif: sans-serif, verdana, tahoma;
   --open-sans: "Open Sans", sans-serif;
 }
-::-webkit-scrollbar-button {
-  height: 50px;
-}
-::-webkit-scrollbar {
-    width: 5px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: var(--light-temptrees);
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
-::-webkit-scrollbar-thumb:window-inactive {
-  background: hsl(349, 5%, 50%);
 
-}
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
+  background: hsl(349, 5%, 50%);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
   background: hsl(349, 5%, 50%);
 }
 
@@ -339,6 +349,7 @@ h3 {
   z-index: 1;
 }
 
+
 /* ==============LIKE BUTTON======================= */
 
 .like-content {
@@ -361,6 +372,10 @@ h3 {
   content: '12 Likes';
   color: #9c9496;
 }
+
+
+
+
 
 /* ==============LIKE BUTTON======================= */
 .meal-name {
@@ -403,145 +418,15 @@ h3 {
 }
 
 /* ================================Meals-Items-Section Start================================ */
-.card-wrapper {
-  display: flex;
-  width: auto;
-}
 
-.card {
-  width: 320px;
-  border: 3px solid var(--dark-olive);
-  border-radius: 27px;
-  background-color: var(--isabelline);
-}
-
-.image-content,
-.card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 14px;
-}
-
-.image-content {
-  position: relative;
-  row-gap: 5px;
-  padding: 25px 0;
-}
-
-.overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: var(--light-xx-olive);
-  border-radius: 25px 25px 0 25px;
-  padding: 10px;
-}
-
-.overlay::before,
-.overlay::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: -40px;
-  height: 40px;
-  width: 40px;
-  background-color: var(--light-xx-olive);
-}
-
-.overlay::after {
-  border-radius: 0 25px 0 0;
-  background-color: var(--isabelline);
-}
-
-.card-image {
-  position: relative;
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-  background: var(--isabelline);
-}
-
-.card-image .card-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.card-wrapper img {
-  width: 300px;
-  height: 300px;
-}
-
-.title-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 15px;
-  z-index: 1;
-}
 
 /* ==============LIKE BUTTON======================= */
 
-.like-content {
-  font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  padding: 5px;
-}
 
-.heart-icon {
-  color: red;
-}
-
-.like-count::before {
-  font-family: sans-serif;
-  font-size: 15px;
-  content: '12 Likes';
-  color: #9c9496;
-}
 
 /* ==============LIKE BUTTON======================= */
-.meal-name {
-  font-size: 20px;
-  font-weight: 600;
-  color: #333;
-}
 
-.card-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  padding: 0 15px;
-}
 
-.card-btn {
-  font-family: var(--open-sans);
-  font-size: 15px;
-  color: var(--isabelline);
-  padding: 8px;
-  background-color: var(--light-x-olive);
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  height: 35px;
-  width: 110px;
-  transition: all 0.3s ease-in-out;
-}
-
-.card-btn:hover {
-  background-color: var(--dark-olive);
-}
 
 /* =================================Meals-Items-Section End================================= */
 

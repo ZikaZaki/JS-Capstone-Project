@@ -60,12 +60,11 @@ const displayMeals = async () => {
         /* here you should invoke the showComments(idMeal) function
                 and pass the idMeal as an argument
                 */
-               console.log('comment button clicked');
-               displayPopup(meal);
-              //  const modal = document.querySelector('#modal_container');
-              //  modal.style.display = 'flex';
-              //  modal.querySelector('#card_img').src = strMealThumb;
-
+        console.log('comment button clicked');
+        displayPopup(meal);
+        //  const modal = document.querySelector('#modal_container');
+        //  modal.style.display = 'flex';
+        //  modal.querySelector('#card_img').src = strMealThumb;
       });
 
       // Setting the reservation button event listener
