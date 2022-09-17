@@ -70,12 +70,12 @@ For deployment you can use the **[GitHub Pages](https://pages.github.com/)**.
 - Twitter: [Zakariya Al-Khamisi](https://twitter.com/ZakariyaKhamisi)
 - LinkedIn: [Zakariya Al-Khamisi](https://www.linkedin.com/in/zakariyaalkhamisisap/)
 
-👤 **Bantealem Geto ([Bantealem Geto](https://github.com/Bantealem)**
+👤 **Bantealem Geto ([Bantealem Geto](https://github.com/Bantealem))**
 
 - GitHub: [Bantealem](https://github.com/Bantealem)
 - Twitter: [Bantealem](https://twitter.com/BantealemG)
 - LinkedIn: [Bantealem](https://www.linkedin.com/in/bantealem-geto-a301b9213/)
-- 
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
