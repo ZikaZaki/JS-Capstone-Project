@@ -33,7 +33,7 @@ const displayPopup = async (meal) => {
   
           <!-- Comments -->
           <div class="meal-comments">
-              <h2 class="comments-title">Comments(${comments.length > 0 ? comments.length: 0})</h2>
+              <h2 class="comments-title">Comments(${comments.length > 0 ? comments.length : 0})</h2>
               <ul id="comments_list" class="comments-list">
                   
               </ul>
@@ -60,24 +60,25 @@ const displayPopup = async (meal) => {
       </div>
       `;
 
-      // Populate the comments list
-      if(comments.length > 0){
-        const commentsList = popup.querySelector('#comments_list');
+  // Populate the comments list
+  /* eslint-disable */
+  if (comments.length > 0) {
+    const commentsList = popup.querySelector('#comments_list');
 
-        comments.map((c) => {
-            const {
-              username, comment, creation_date,
-            } = c;
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `
+    comments.map((c) => {
+      const {
+        username, comment, creation_date,
+      } = c;
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
                 <div class="comment-wrapper">
                     <span class="comment-header">(${creation_date}) ${username}:&ensp;</span>
                     <p class="comment-body">${comment}</p>
                 </div>
             `;
-            commentsList.appendChild(listItem);
-        });
-      }
+      return commentsList.appendChild(listItem);
+    });
+  }
 
   document.querySelector('#page_wrapper').appendChild(popup);
 
@@ -87,29 +88,29 @@ const displayPopup = async (meal) => {
   });
 
   popup.querySelector('#submit_btn').addEventListener('click', (e) => {
-      const commentsList = popup.querySelector('#comments_list');
-      const user = popup.querySelector('#comment_author').value;
-      const comment = popup.querySelector('#comment_txt').value;
-      const t = new Date();
-      const date = ('0' + t.getDate()).slice(-2);
-      const month = ('0' + (t.getMonth() + 1)).slice(-2);
-      const year = t.getFullYear();
-      const fullDate = `${year}-${month}-${date}`;
+    const commentsList = popup.querySelector('#comments_list');
+    const user = popup.querySelector('#comment_author').value;
+    const comment = popup.querySelector('#comment_txt').value;
+    const t = new Date();
+    const date = (`0${t.getDate()}`).slice(-2);
+    const month = (`0${t.getMonth() + 1}`).slice(-2);
+    const year = t.getFullYear();
+    const fullDate = `${year}-${month}-${date}`;
 
-      // Add the new comment to the comments list without the need to refresh the page
-      if (user.trim() !== '' && comment.trim() !== '') {
-        e.preventDefault();
-        setComments(idMeal, user, comment);
-        const listItem = document.createElement('li');
-             listItem.innerHTML = `
+    // Add the new comment to the comments list without the need to refresh the page
+    if (user.trim() !== '' && comment.trim() !== '') {
+      e.preventDefault();
+      setComments(idMeal, user, comment);
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
                 <div class="comment-wrapper">
                     <span class="comment-header">(${fullDate}) ${user}:&ensp;</span>
                     <p class="comment-body">${comment}</p>
                 </div>
          `;
-        commentsList.appendChild(listItem);
-        popup.querySelector('#comment_form').reset();
-      }
+      commentsList.appendChild(listItem);
+      popup.querySelector('#comment_form').reset();
+    }
   });
   document.body.style.overflow = 'hidden';
 };

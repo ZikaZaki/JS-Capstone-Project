@@ -44,8 +44,10 @@ const setComments = async (idMeal, user, comment) => {
     body: JSON.stringify({
       item_id: idMeal,
       username: user,
-      comment: comment,
+      comment,
     }),
   });
 };
-export { getMeals, getLikes, setLikes, getComments, setComments };
+export {
+  getMeals, getLikes, setLikes, getComments, setComments,
+};
