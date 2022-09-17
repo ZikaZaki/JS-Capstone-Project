@@ -1,4 +1,6 @@
-import mealsURL from './api-utils.js';
+import { mealsURL, involvementURL } from './api-urls.js';
+// import getLikes from './get-likes.js';
+import getLikes from './api-utils.js';
 import displayPopup from './details.popup.js';
 import logo from '../img/logo.png';
 
@@ -18,6 +20,9 @@ const displayMeals = async () => {
     // Fetching the meals from the API
     const fetchedMeals = await fetch(mealsURL);
     const { meals } = await fetchedMeals.json();
+    // Fetching the likes from the API
+    const mealsLikes = await getLikes(involvementURL);
+
     // Setting the meals count
     setMealsCount(meals);
     // Get the Page-Content element to insert meal cards
@@ -27,6 +32,8 @@ const displayMeals = async () => {
       const {
         idMeal, strMeal, strMealThumb,
       } = meal;
+      // finding the likes for the current meal
+      const likes = mealsLikes.filter((like) => like.item_id === idMeal);
       const mealCard = document.createElement('div');
       mealCard.classList.add('card-wrapper');
       mealCard.innerHTML = `
@@ -44,7 +51,7 @@ const displayMeals = async () => {
                         </div> 
                         <div class="like-content">
                             <ion-icon id="heart_icon" class="heart-icon" name="heart"></ion-icon>
-                            <span id="like_count" class="like-count"></span>
+                            <span id="like_count" class="like-count">${likes.length > 0 ? likes[0].likes: 0} Likes</span>
                         </div>
                     </div>
                     <div class="card-buttons">
@@ -72,7 +79,9 @@ const displayMeals = async () => {
         /* here you should invoke the showReservations(idMeal) function
                 and pass the idMeal as an argument
                 */
+
       });
+
 
       // Setting the like button event listener
       // const likeCount = mealCard.querySelector('#like_count');
@@ -80,7 +89,16 @@ const displayMeals = async () => {
         /* here you should invoke the addLike(idMeal, likeCount) function
                 and pass the { idMeal, likeCount } as arguments
                 */
+              console.log(likes[0].item_id);
+              
+                console.log(likes);
+                console.log(likes);
+                console.log(meals);
+
+
+        console.log('like button clicked');
       });
+
 
       return pageContent.appendChild(mealCard);
     });

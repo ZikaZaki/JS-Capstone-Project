@@ -364,10 +364,10 @@ h3 {
   color: red;
 }
 
-.like-count::before {
+.like-count {
   font-family: sans-serif;
   font-size: 15px;
-  content: '12 Likes';
+  /* content: '12 Likes'; */
   color: #9c9496;
 }
 
