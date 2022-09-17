@@ -1,24 +1,28 @@
-// import involvementURL from './api-urls.js';
+import { mealsURL, involvementURL } from './api-urls.js';
 
-
-//  const getMeals = async() => {
-//     // Fetching the meals from the API
-//     // const fetchedMeals = await fetch(mealsURL);
-//     // const { meals } = await fetchedMeals.json();
-
-//     return await fetch(mealsURL);
-
-// };
-
-//  const setLikes = async(idMeal) =>{
-//     await fetch(`${involvementURL}/likes/?item_id=${idMeal}`);
-// };
-
-  const getLikes = async(baseURL) => {
-    const response = await fetch(`${baseURL}likes/`);
-    const likes = await response.json();
-
-    return likes;
+/* Fetch the meals list from MealsDB-API */
+const getMeals = async() => {
+    const response = await fetch(mealsURL);
+    return await response.json();
 };
 
-export default getLikes;
+// Adds a new like for an item in the likes-API
+const setLikes = async(idMeal) =>{
+    return await fetch(`${involvementURL}likes/`, {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        item_id: idMeal,
+      }),
+    });
+};
+
+// Gets all items from the likes-API
+const getLikes = async() => {
+    const response = await fetch(`${involvementURL}likes/`);
+    return await response.json();
+};
+
+export { getMeals, getLikes, setLikes };

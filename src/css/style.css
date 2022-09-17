@@ -356,18 +356,17 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   padding: 5px;
 }
 
 .heart-icon {
   color: red;
+  cursor: pointer;
 }
 
 .like-count {
   font-family: sans-serif;
   font-size: 15px;
-  /* content: '12 Likes'; */
   color: #9c9496;
 }
 
