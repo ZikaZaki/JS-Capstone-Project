@@ -1,4 +1,5 @@
 import mealsURL from './api-utils.js';
+import displayPopup from './details-popup.js';
 import logo from '../img/logo.png';
 
 const setHeaderLogo = () => {
@@ -59,6 +60,12 @@ const displayMeals = async () => {
         /* here you should invoke the showComments(idMeal) function
                 and pass the idMeal as an argument
                 */
+               console.log('comment button clicked');
+               displayPopup(meal);
+              //  const modal = document.querySelector('#modal_container');
+              //  modal.style.display = 'flex';
+              //  modal.querySelector('#card_img').src = strMealThumb;
+
       });
 
       // Setting the reservation button event listener
