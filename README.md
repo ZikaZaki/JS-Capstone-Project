@@ -2,8 +2,7 @@
 
 # Project Name
 
-> Description the project.
-
+> This project is build around the **MealDB API** using HTML5,SCSS and JavaScript. You can view various types of **Dishes** & **Meals** and you can also get all the **info** about them. Moreover, you can interact with the meals list by giving them a **like** or by adding some comments about them.
 
 ## Built With
 

@@ -1,7 +1,12 @@
+import { getComments, setComments } from './api-utils.js';
+
 const displayPopup = async (meal) => {
   const {
-    strMeal, strMealThumb, strCategory, strArea, strTags,
+    idMeal, strMeal, strMealThumb, strCategory, strArea, strTags,
   } = meal;
+  // Fetch the comments of the current meal
+  const comments = await getComments(idMeal);
+
   const popup = document.createElement('div');
   popup.classList.add('modal-container');
   popup.setAttribute('id', 'modal_container');
@@ -28,30 +33,25 @@ const displayPopup = async (meal) => {
   
           <!-- Comments -->
           <div class="meal-comments">
-              <h2 class="comments-title">Comments(2)</h2>
-              <ul class="comments-list">
-                  <li>
-                  <div class="comment-wrapper">
-                      <span class="comment-header">03/11/2022: ZikaZaki</span>
-                      <p class="comment-body">I'd love to buy it</p>
-                  </div>
-                  </li>
+              <h2 class="comments-title">Comments(${comments.length > 0 ? comments.length : 0})</h2>
+              <ul id="comments_list" class="comments-list">
+                  
               </ul>
               
               <!-- Comment Form -->
               <div class="comment-form">
                   <h3 class="form-title">Add Your Comment</h3>
-                  <form action="#">
+                  <form action="#" id="comment_form">
                       <div class="form-group">
                           <label for="author" hidden>Your name</label>
-                          <input type="text" id="author" placeholder="Your name">
+                          <input type="text" id="comment_author" placeholder="Your name" required>
                       </div>
                       <div class="form-group">
                           <label for="comment" hidden>Your comment</label>
-                          <textarea name="comment" id="comment" rows="10" placeholder="Your comment"></textarea>
+                          <textarea name="comment" id="comment_txt" rows="10" placeholder="Your comment" required></textarea>
                       </div>
                       <div class="form-group">
-                          <button class="card-btn" type="submit">Comment</button>
+                          <button id="submit_btn" class="card-btn" type="submit">Comment</button>
                       </div>
                   </form>
               </div>
@@ -59,32 +59,60 @@ const displayPopup = async (meal) => {
           </div>
       </div>
       `;
+
+  // Populate the comments list
+  /* eslint-disable */
+  if (comments.length > 0) {
+    const commentsList = popup.querySelector('#comments_list');
+
+    comments.map((c) => {
+      const {
+        username, comment, creation_date,
+      } = c;
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
+                <div class="comment-wrapper">
+                    <span class="comment-header">(${creation_date}) ${username}:&ensp;</span>
+                    <p class="comment-body">${comment}</p>
+                </div>
+            `;
+      return commentsList.appendChild(listItem);
+    });
+  }
+
   document.querySelector('#page_wrapper').appendChild(popup);
+
   popup.querySelector('#close_btn').addEventListener('click', () => {
     popup.remove();
     document.body.style.overflow = 'auto';
   });
-  // popup.querySelector('#comment_form').addEventListener('submit', (e) => {
-  //     e.preventDefault();
-  //     const commenterName = popup.querySelector('#commenter_name').value;
-  //     const commentText = popup.querySelector('#comment_text').value;
-  //     const comment = document.createElement('div');
-  //     comment.classList.add('comment');
-  //     comment.innerHTML = `
-  //     <div class="comment-header">
-  //         <h3>${commenterName}</h3>
-  //         <span class="comment-date">Date</span>
-  //     </div>
-  //     <p class="comment-text">${commentText}</p>
-  //     `;
-  //     popup.querySelector('.comments-content').appendChild(comment);
-  //     popup.querySelector('#comment_form').reset();
-  // });
+
+  popup.querySelector('#submit_btn').addEventListener('click', (e) => {
+    const commentsList = popup.querySelector('#comments_list');
+    const user = popup.querySelector('#comment_author').value;
+    const comment = popup.querySelector('#comment_txt').value;
+    const t = new Date();
+    const date = (`0${t.getDate()}`).slice(-2);
+    const month = (`0${t.getMonth() + 1}`).slice(-2);
+    const year = t.getFullYear();
+    const fullDate = `${year}-${month}-${date}`;
+
+    // Add the new comment to the comments list without the need to refresh the page
+    if (user.trim() !== '' && comment.trim() !== '') {
+      e.preventDefault();
+      setComments(idMeal, user, comment);
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
+                <div class="comment-wrapper">
+                    <span class="comment-header">(${fullDate}) ${user}:&ensp;</span>
+                    <p class="comment-body">${comment}</p>
+                </div>
+         `;
+      commentsList.appendChild(listItem);
+      popup.querySelector('#comment_form').reset();
+    }
+  });
   document.body.style.overflow = 'hidden';
 };
-
-// displayPopup(meal){
-
-// }
 
 export default displayPopup;

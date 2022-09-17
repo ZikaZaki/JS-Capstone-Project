@@ -158,6 +158,10 @@ span {
   padding: 10px 10px 5px;
 }
 
+.dish-name {
+  font-size: 26px;
+}
+
 .meal-info {
   display: flex;
   flex-direction: column;
@@ -183,6 +187,7 @@ span {
 }
 
 .comments-title {
+  font-size: 22px;
   align-self: center;
   padding: 5px;
 }
@@ -193,6 +198,7 @@ span {
   align-items: flex-start;
   flex-wrap: wrap;
   overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .comments-list {
@@ -208,8 +214,9 @@ span {
 }
 
 .form-title {
+  font-size: 22px;
   align-self: center;
-  padding: 20px 0 5px;
+  padding: 15px 0 5px;
 }
 
 .form-group {
