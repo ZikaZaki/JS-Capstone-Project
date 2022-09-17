@@ -10,7 +10,7 @@ const setHeaderLogo = () => {
 // Setting the meals count element
 const setMealsCount = async (count) => {
   const mealsCount = await document.querySelector('#meals_count');
-  mealsCount.innerHTML = await `${count} Meals`;
+  mealsCount.innerHTML = await `Meals (${count})`;
   return mealsCount;
 };
 
