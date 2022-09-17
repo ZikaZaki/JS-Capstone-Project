@@ -10,7 +10,7 @@
 - **Technologies used**: NPM, Webpack, & Jest Library.
 - **Tools**: Git, Gitflow, GitHub, VS Code, & Chrome Browser.
 
-## Live Demo (Deployed on GitHub Pages with SSL)
+## Live Demo (Deployed on GitHub-Pages with SSL)
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blueviolet)](https://livedemo.com)
 
@@ -50,17 +50,20 @@ $ git clone https://github.com/ZikaZaki/JS-Capstone-Project.git
 - Start customizing the project so it fits your personal preferences and needs.
 - Enjoy your new professional **JS-Capstone-Project** application!
 
-### Run tests
+### Install Dependencies
 
 To check for linters, use the files provided by [Microverse](https://github.com/microverseinc/linters-config). A GitHub action is also set to run during pull request.
 
 ```
 $ npm install
 ```
+### Run tests
 
-### Deployment
+We used the **Jest** library for testing the project.
 
-For deployment you can use the **[GitHub Pages](https://pages.github.com/)**.
+```
+$ npm test
+```
 
 ## Authors
 
