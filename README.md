@@ -20,7 +20,7 @@
 
 [![Loom](https://img.shields.io/badge/Loom-Video-blueviolet)](https://loom.com)
 
-[![Meals Lover Video Demo](https://img.shields.io/badge/Loom-Video-blueviolet)](https://www.loom.com/share/ea28c66ce61442e5b11c08218fe91261)
+[Meals Lover Video Demo](https://www.loom.com/share/ea28c66ce61442e5b11c08218fe91261)
 
 ## Getting Started
 
