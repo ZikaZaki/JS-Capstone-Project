@@ -1,5 +1,5 @@
 import mealsURL from './api-utils.js';
-import displayPopup from './details-popup.js';
+import displayPopup from './details.popup.js';
 import logo from '../img/logo.png';
 
 const setHeaderLogo = () => {
