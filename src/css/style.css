@@ -1,5 +1,7 @@
 /* Importing the "normalize.css" file which is for resetting all the default css values */
 @import url("./normalize.css");
+
+/* Importing popup.css file for styling details-popup */
 @import url("./popup.css");
 
 /* Importing Fonts */
@@ -28,10 +30,6 @@
   background: var(--light-temptrees);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
-
-
-
-
 
 /* ******Main & Secondary Colors****** */
 :root {
@@ -266,6 +264,8 @@ h3 {
 }
 
 /* ======================================Page-Wrapper End==================================== */
+
+/* ================================Meals-Items-Section Start================================ */
 .card-wrapper {
   display: flex;
   width: auto;
@@ -349,7 +349,6 @@ h3 {
   z-index: 1;
 }
 
-
 /* ==============LIKE BUTTON======================= */
 
 .like-content {
@@ -358,26 +357,20 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   padding: 5px;
 }
 
 .heart-icon {
   color: red;
+  cursor: pointer;
 }
 
-.like-count::before {
+.like-count {
   font-family: sans-serif;
   font-size: 15px;
-  content: '12 Likes';
   color: #9c9496;
 }
 
-
-
-
-
-/* ==============LIKE BUTTON======================= */
 .meal-name {
   font-size: 20px;
   font-weight: 600;
@@ -417,19 +410,7 @@ h3 {
   background-color: var(--dark-olive);
 }
 
-/* ================================Meals-Items-Section Start================================ */
-
-
-/* ==============LIKE BUTTON======================= */
-
-
-
-/* ==============LIKE BUTTON======================= */
-
-
-
 /* =================================Meals-Items-Section End================================= */
-
 
 /* =================================Contact-Section Start================================= */
 
@@ -480,8 +461,6 @@ footer {
 }
 
 /* ===================================Footer-Section End=================================== */
-
-
 
 /* ====================================Media Query Start==================================== */
 

@@ -1,32 +1,37 @@
-import mealsURL from './api-utils.js';
+import { getMeals, getLikes, setLikes } from './api-utils.js';
 import displayPopup from './details-popup.js';
 import logo from '../img/logo.png';
 
+// Setting the header logo
 const setHeaderLogo = () => {
   document.querySelector('#header_logo').src = logo;
 };
 
-const setMealsCount = async (meals) => {
-  const countElement = document.querySelector('#meals_count');
-  const counter = await meals.length;
-  countElement.innerHTML = `Number of Meals: (${counter})`;
-  return counter;
+// Setting the meals count element
+const setMealsCount = async (count) => {
+  const mealsCount = await document.querySelector('#meals_count');
+  mealsCount.innerHTML = await `${count} Meals`;
+  return mealsCount;
 };
 
 const displayMeals = async () => {
   try {
-    // Fetching the meals from the API
-    const fetchedMeals = await fetch(mealsURL);
-    const { meals } = await fetchedMeals.json();
-    // Setting the meals count
-    setMealsCount(meals);
+    // Destructuring the { meals-list } fetched form the API
+    const { meals } = await getMeals();
+    // Fetching the likes from the API
+    const mealsLikes = await getLikes();
+    // Setting the meals count element
+    setMealsCount(meals.length);
     // Get the Page-Content element to insert meal cards
     const pageContent = document.querySelector('#page_content');
-    // Looping through the meals
+
+    // Looping through the meals & destructuring the meal object into variables
     meals.map((meal) => {
       const {
         idMeal, strMeal, strMealThumb,
       } = meal;
+      // finding the likes for the current meal
+      const likes = mealsLikes.filter((like) => like.item_id === idMeal);
       const mealCard = document.createElement('div');
       mealCard.classList.add('card-wrapper');
       mealCard.innerHTML = `
@@ -44,7 +49,7 @@ const displayMeals = async () => {
                         </div> 
                         <div class="like-content">
                             <ion-icon id="heart_icon" class="heart-icon" name="heart"></ion-icon>
-                            <span id="like_count" class="like-count"></span>
+                            <span id="like_count" class="like-count">${likes.length > 0 ? likes[0].likes : 0} Likes</span>
                         </div>
                     </div>
                     <div class="card-buttons">
@@ -55,31 +60,27 @@ const displayMeals = async () => {
             </div>
             `;
 
-      // Setting the comment button event listener
+      /* Setting the comment button event listener */
       mealCard.querySelector('#comment_btn').addEventListener('click', () => {
-        /* here you should invoke the showComments(idMeal) function
-                and pass the idMeal as an argument
-                */
-        console.log('comment button clicked');
+        // Displaying the details-popup
         displayPopup(meal);
-        //  const modal = document.querySelector('#modal_container');
-        //  modal.style.display = 'flex';
-        //  modal.querySelector('#card_img').src = strMealThumb;
       });
 
-      // Setting the reservation button event listener
+      /* Setting the reservation button event listener */
       mealCard.querySelector('#reservation_btn').addEventListener('click', () => {
         /* here you should invoke the showReservations(idMeal) function
-                and pass the idMeal as an argument
-                */
+          and pass the idMeal as an argument
+        */
       });
 
-      // Setting the like button event listener
-      // const likeCount = mealCard.querySelector('#like_count');
-      mealCard.querySelector('#heart_icon').addEventListener('click', () => {
-        /* here you should invoke the addLike(idMeal, likeCount) function
-                and pass the { idMeal, likeCount } as arguments
-                */
+      /* Setting the like button event listener */
+      mealCard.querySelector('#heart_icon').addEventListener('click', (e) => {
+        // getting the like count element
+        const likeCount = e.target.parentElement.querySelector('#like_count');
+        // setting the likes API
+        setLikes(idMeal);
+        // updating the like count element
+        likeCount.innerHTML = `${likes[0].likes + 1} Likes`;
       });
 
       return pageContent.appendChild(mealCard);
