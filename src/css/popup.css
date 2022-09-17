@@ -13,7 +13,7 @@ a:focus {
 
 button::-moz-focus-inner {
   border: 0;
-} 
+}
 */
 *::after,
 *::before {
@@ -38,8 +38,9 @@ button::-moz-focus-inner {
 }
 
 /* using :target */
+
 /*
-when users will click/enter button(link) browser will add a #id in a url 
+when users will click/enter button(link) browser will add a #id in a url
 and when that happens we'll show our users the modal that contains that id.
 */
 .modal-container:target {
@@ -228,4 +229,5 @@ span {
   border-radius: 6px;
   padding: 10px 12px;
 }
+
 /* end of modal */

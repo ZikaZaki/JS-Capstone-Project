@@ -1,11 +1,11 @@
 const displayPopup = async (meal) => {
-    const {
-      strMeal, strMealThumb, strCategory, strArea, strTags,
-    } = meal;
-    const popup = document.createElement('div');
-    popup.classList.add('modal-container');
-    popup.setAttribute('id', 'modal_container');
-    popup.innerHTML = `
+  const {
+    strMeal, strMealThumb, strCategory, strArea, strTags,
+  } = meal;
+  const popup = document.createElement('div');
+  popup.classList.add('modal-container');
+  popup.setAttribute('id', 'modal_container');
+  popup.innerHTML = `
       <div class="modal">
       <!-- close button -->
       <div id="close_btn" class="close-btn"><a href="#"></a></div>
@@ -59,32 +59,32 @@ const displayPopup = async (meal) => {
           </div>
       </div>
       `;
-    document.querySelector('#page_wrapper').appendChild(popup);
-    popup.querySelector('#close_btn').addEventListener('click', () => {
-      popup.remove();
-      document.body.style.overflow = 'auto';
-    });
-    // popup.querySelector('#comment_form').addEventListener('submit', (e) => {
-    //     e.preventDefault();
-    //     const commenterName = popup.querySelector('#commenter_name').value;
-    //     const commentText = popup.querySelector('#comment_text').value;
-    //     const comment = document.createElement('div');
-    //     comment.classList.add('comment');
-    //     comment.innerHTML = `
-    //     <div class="comment-header">
-    //         <h3>${commenterName}</h3>
-    //         <span class="comment-date">Date</span>
-    //     </div>
-    //     <p class="comment-text">${commentText}</p>
-    //     `;
-    //     popup.querySelector('.comments-content').appendChild(comment);
-    //     popup.querySelector('#comment_form').reset();
-    // });
-    document.body.style.overflow = 'hidden';
-  };
-  
-  // displayPopup(meal){
-  
-  // }
-  
-  export default displayPopup;
+  document.querySelector('#page_wrapper').appendChild(popup);
+  popup.querySelector('#close_btn').addEventListener('click', () => {
+    popup.remove();
+    document.body.style.overflow = 'auto';
+  });
+  // popup.querySelector('#comment_form').addEventListener('submit', (e) => {
+  //     e.preventDefault();
+  //     const commenterName = popup.querySelector('#commenter_name').value;
+  //     const commentText = popup.querySelector('#comment_text').value;
+  //     const comment = document.createElement('div');
+  //     comment.classList.add('comment');
+  //     comment.innerHTML = `
+  //     <div class="comment-header">
+  //         <h3>${commenterName}</h3>
+  //         <span class="comment-date">Date</span>
+  //     </div>
+  //     <p class="comment-text">${commentText}</p>
+  //     `;
+  //     popup.querySelector('.comments-content').appendChild(comment);
+  //     popup.querySelector('#comment_form').reset();
+  // });
+  document.body.style.overflow = 'hidden';
+};
+
+// displayPopup(meal){
+
+// }
+
+export default displayPopup;

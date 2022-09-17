@@ -1,6 +1,7 @@
 /* Importing the "normalize.css" file which is for resetting all the default css values */
 @import url("./normalize.css");
-/* Importing popup.css file for styling details-popup*/
+
+/* Importing popup.css file for styling details-popup */
 @import url("./popup.css");
 
 /* Importing Fonts */
@@ -408,6 +409,7 @@ h3 {
 .card-btn:hover {
   background-color: var(--dark-olive);
 }
+
 /* =================================Meals-Items-Section End================================= */
 
 /* =================================Contact-Section Start================================= */

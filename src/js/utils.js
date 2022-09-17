@@ -10,7 +10,8 @@ const setHeaderLogo = () => {
 // Setting the meals count element
 const setMealsCount = async (count) => {
   const mealsCount = await document.querySelector('#meals_count');
-  return mealsCount.innerHTML = `Number of Meals: (${count})`;
+  mealsCount.innerHTML = await `${count} Meals`;
+  return mealsCount;
 };
 
 const displayMeals = async () => {
@@ -48,7 +49,7 @@ const displayMeals = async () => {
                         </div> 
                         <div class="like-content">
                             <ion-icon id="heart_icon" class="heart-icon" name="heart"></ion-icon>
-                            <span id="like_count" class="like-count">${likes.length > 0 ? likes[0].likes: 0} Likes</span>
+                            <span id="like_count" class="like-count">${likes.length > 0 ? likes[0].likes : 0} Likes</span>
                         </div>
                     </div>
                     <div class="card-buttons">
@@ -63,7 +64,6 @@ const displayMeals = async () => {
       mealCard.querySelector('#comment_btn').addEventListener('click', () => {
         // Displaying the details-popup
         displayPopup(meal);
-        console.log('comment button clicked');
       });
 
       /* Setting the reservation button event listener */
@@ -81,10 +81,7 @@ const displayMeals = async () => {
         setLikes(idMeal);
         // updating the like count element
         likeCount.innerHTML = `${likes[0].likes + 1} Likes`;
-   
-        console.log('like button clicked');
       });
-
 
       return pageContent.appendChild(mealCard);
     });
