@@ -1,20 +1,3 @@
-/* defaults */
-
-/* *,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-a:focus {
-  outline: none;
-}
-
-button::-moz-focus-inner {
-  border: 0;
-}
-*/
 *::after,
 *::before {
   margin: 0;
@@ -36,8 +19,6 @@ button::-moz-focus-inner {
   width: 100%;
   height: 100%;
 }
-
-/* using :target */
 
 /*
 when users will click/enter button(link) browser will add a #id in a url

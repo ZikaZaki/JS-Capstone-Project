@@ -151,8 +151,6 @@ h3 {
   width: 100%;
   height: 100%;
   padding: 5px;
-
-  /* position: relative; */
 }
 
 .nav-menu {
@@ -173,8 +171,6 @@ h3 {
   color: var(--isabelline);
   opacity: 0.75;
   width: 100%;
-
-  /* position: relative; */
   z-index: 99999;
 }
 
@@ -191,8 +187,6 @@ h3 {
   flex-wrap: nowrap;
   border-radius: 60px;
   background: var(--light-temptrees);
-
-  /* background: rgba(255, 255, 255, 0.2); */
   backdrop-filter: blur(4px) saturate(180%);
   transition: all 0.5s ease-in-out;
   width: 100%;
